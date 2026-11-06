@@ -4,6 +4,11 @@ import {
   Github, Globe2, GraduationCap, Linkedin, Mail, Menu, Palette,
   Sparkles, X, Languages, Heart
 } from 'lucide-react'
+import proj1 from './images/proj1.png';
+import proj2 from './images/proj2.png';
+import proj3 from './images/proj3.png';
+import photo1 from './images/photo1.jpeg';
+
 
 const profile = {
   name: 'Shrigouri Navaratna',
@@ -13,7 +18,7 @@ const profile = {
   email: 'shrigouri.navaratna@gmail.com',
   about: 'I am naturally curious about how things work and what the data behind them can reveal. I enjoy exploring complex problems, connecting the dots, and finding patterns that might otherwise go unnoticed.\
           My journey from engineering to data analytics has shaped the way I approach challenges: with analytical thinking, attention to detail, and a focus on finding meaningful solutions rather than just quick answers.',
-  image: 'src/images/photo1.jpeg',
+  image: photo1,
   github: 'https://github.com/gouri9230',
   linkedin: 'https://www.linkedin.com/in/shrigouri-navaratna/',
 }
@@ -50,9 +55,9 @@ const skillGroups = [
 ];
 
 const projects = [
-  { number: '01', title: 'Spotify Data Lakehouse Pipeline', type: 'Azure Data Pipeline', desc: 'An end-to-end data engineering pipeline built on Azure and Databricks, implementing the Medallion Architecture with real-time incremental loading, data governance, CI/CD, and automated alerting.', tags: ['Microsoft Azure', 'Azure SQL Database', 'PySpark', 'Star Schema', 'Databricks', 'Python', 'SCD Type 2', 'DLT'], github: 'https://github.com/gouri9230/Azure_Spotify_Project', color: 'from-lime-300/20 via-emerald-400/10 to-transparent', image: 'src/images/proj1.png' },
-  { number: '02', title: 'Uber-Style Transportation Data Lakehouse', type: 'Azure Data Pipeline', desc: 'An end-to-end Uber-Style data platform that combines incremental data ingestion, real-time trip processing with Spark Streaming, and dbt transformations to build a medallion-style analytics pipeline in Databricks.', tags: ['PySpark', 'dbt', 'Python', 'SQL', 'Spark Structured Streaming', 'Star Schema', 'dbt Snapshots'], github: 'https://github.com/gouri9230/TravelData_dbt_pyspark', color: 'from-violet-400/20 via-fuchsia-400/10 to-transparent', image: 'src/images/proj2.png' },
-  { number: '03', title: 'SAP Data Pipeline', type: 'ETL/ELT Pipelines', desc: 'An end-to-end data pipeline using Azure Data Factory to replicate 6 SAP tables (MARA, VBAP, VBRK, COSTLIST, INVOICE_LINE_ITEM, PRODUCING_STAT_RATIO_DETAIL) from On-Premise SQL Server into a Medallion Architecture (Bronze/Silver/Gold) on Azure', tags: ['ADF', 'Azure SQL Database', 'ADLS Gen2', 'SQL Server', 'Medallion Architecture'], github: 'https://github.com/gouri9230/SAP-Data-Pipeline', color: 'from-sky-300/20 via-cyan-400/10 to-transparent', image: 'src/images/proj3.png' },
+  { number: '01', title: 'Spotify Data Lakehouse Pipeline', type: 'Azure Data Pipeline', desc: 'An end-to-end data engineering pipeline built on Azure and Databricks, implementing the Medallion Architecture with real-time incremental loading, data governance, CI/CD, and automated alerting.', tags: ['Microsoft Azure', 'Azure SQL Database', 'PySpark', 'Star Schema', 'Databricks', 'Python', 'SCD Type 2', 'DLT'], github: 'https://github.com/gouri9230/Azure_Spotify_Project', color: 'from-lime-300/20 via-emerald-400/10 to-transparent', image: proj1 },
+  { number: '02', title: 'Uber-Style Transportation Data Lakehouse', type: 'Azure Data Pipeline', desc: 'An end-to-end Uber-Style data platform that combines incremental data ingestion, real-time trip processing with Spark Streaming, and dbt transformations to build a medallion-style analytics pipeline in Databricks.', tags: ['PySpark', 'dbt', 'Python', 'SQL', 'Spark Structured Streaming', 'Star Schema', 'dbt Snapshots'], github: 'https://github.com/gouri9230/TravelData_dbt_pyspark', color: 'from-violet-400/20 via-fuchsia-400/10 to-transparent', image: proj2 },
+  { number: '03', title: 'SAP Data Pipeline', type: 'ETL/ELT Pipelines', desc: 'An end-to-end data pipeline using Azure Data Factory to replicate 6 SAP tables (MARA, VBAP, VBRK, COSTLIST, INVOICE_LINE_ITEM, PRODUCING_STAT_RATIO_DETAIL) from On-Premise SQL Server into a Medallion Architecture (Bronze/Silver/Gold) on Azure', tags: ['ADF', 'Azure SQL Database', 'ADLS Gen2', 'SQL Server', 'Medallion Architecture'], github: 'https://github.com/gouri9230/SAP-Data-Pipeline', color: 'from-sky-300/20 via-cyan-400/10 to-transparent', image: proj3 },
 ]
 const experienceGroups = [
   {
