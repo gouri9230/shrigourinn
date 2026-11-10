@@ -1,6 +1,7 @@
 # Personal Portfolio
 
 A responsive, dark portfolio starter built with React, Vite, Tailwind CSS, and Lucide icons.
+URL:  https://gouri9230.github.io/shrigourinn/
 
 ## Run locally
 
