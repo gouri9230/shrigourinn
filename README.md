@@ -51,7 +51,7 @@ npm run build
 
 ## Live Portfolio
 
-[Visit my portfolio](https://gouri9230.github.io/portfolio-website/)
+[Visit my portfolio](https://gouri9230.github.io/shrigourinn/)
 
 ## Contact
 
