@@ -1,30 +1,58 @@
-# Personal Portfolio
 
-A responsive, dark portfolio starter built with React, Vite, Tailwind CSS, and Lucide icons.
-URL:  https://gouri9230.github.io/shrigourinn/
+# Shrigouri Navaratna — Portfolio
 
-## Run locally
+Welcome to my personal portfolio! I'm a Data Analyst and aspiring Analytics Engineer / Data Engineer passionate about transforming complex data into actionable insights and building reliable data solutions.
 
-```bash
-npm install
-npm run dev
-```
+## About
 
-Open the local URL printed by Vite (usually http://localhost:5173).
+This portfolio showcases my projects, technical skills, professional journey, and interests.
+
+## Tech Stack
+
+- React
+- Vite
+- Tailwind CSS
+- JavaScript
+- Lucide React
+
+## Run Locally
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/gouri9230/portfolio-website.git
+   ```
+
+2. Navigate to the project folder:
+
+   ```bash
+   cd portfolio-website
+   ```
+
+3. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+4. Start the development server:
+
+   ```bash
+   npm run dev
+   ```
 
 ## Build
 
+To create a production build:
+
 ```bash
 npm run build
-npm run preview
 ```
 
-## Customize
+## Live Portfolio
 
-Edit the `profile`, `skills`, `projects`, `experience`, and `education` objects near the top of `src/App.jsx`. Replace the portrait URL with your own image (or put it in `public/` and reference it as `/your-photo.jpg`). Update social links and the email address before publishing.
+[Visit my portfolio](https://gouri9230.github.io/portfolio-website/)
 
-## Deploy
+## Contact
 
-Import this repository into Vercel or Netlify. Set the build command to `npm run build` and the output directory to `dist`. No environment variables are required for the starter.
-
-Personal details and project examples are placeholders. Replace them with accurate information before publishing.
+Feel free to connect with me through my portfolio!
