@@ -46,19 +46,20 @@ const skillGroups = [
   },
   {
     name: 'AI & LLM Technologies',
-    skills: ['OpenAI API', 'Large Language Models (LLMs)', 'Claude', 'GitHub Copilot', 'Kiro']
+    skills: ['OpenAI API', 'Large Language Models (LLMs)', 'Claude', 'GitHub Copilot', 'Codex', 'VS Code Agent']
   },
   {
     name: 'Professional Skills',
-    skills: ['Communication', 'Leadership', 'Teamwork', 'Self-directed Learning', 'Problem Solving', 'Root Cause Analysis']
+    skills: ['Communication', 'Leadership', 'Teamwork', 'Self-Learning', 'Problem Solving']
   }
 ];
 
 const projects = [
-  { number: '01', title: 'Spotify Data Lakehouse Pipeline', type: 'Azure Data Pipeline', desc: 'An end-to-end data engineering pipeline built on Azure and Databricks, implementing the Medallion Architecture with real-time incremental loading, data governance, CI/CD, and automated alerting.', tags: ['Microsoft Azure', 'Azure SQL Database', 'PySpark', 'Star Schema', 'Databricks', 'Python', 'SCD Type 2', 'DLT'], github: 'https://github.com/gouri9230/Azure_Spotify_Project', color: 'from-lime-300/20 via-emerald-400/10 to-transparent', image: proj1 },
-  { number: '02', title: 'Uber-Style Transportation Data Lakehouse', type: 'Azure Data Pipeline', desc: 'An end-to-end Uber-Style data platform that combines incremental data ingestion, real-time trip processing with Spark Streaming, and dbt transformations to build a medallion-style analytics pipeline in Databricks.', tags: ['PySpark', 'dbt', 'Python', 'SQL', 'Spark Structured Streaming', 'Star Schema', 'dbt Snapshots'], github: 'https://github.com/gouri9230/TravelData_dbt_pyspark', color: 'from-violet-400/20 via-fuchsia-400/10 to-transparent', image: proj2 },
-  { number: '03', title: 'SAP Data Pipeline', type: 'ETL/ELT Pipelines', desc: 'An end-to-end data pipeline using Azure Data Factory to replicate 6 SAP tables (MARA, VBAP, VBRK, COSTLIST, INVOICE_LINE_ITEM, PRODUCING_STAT_RATIO_DETAIL) from On-Premise SQL Server into a Medallion Architecture (Bronze/Silver/Gold) on Azure', tags: ['ADF', 'Azure SQL Database', 'ADLS Gen2', 'SQL Server', 'Medallion Architecture'], github: 'https://github.com/gouri9230/SAP-Data-Pipeline', color: 'from-sky-300/20 via-cyan-400/10 to-transparent', image: proj3 },
+  { number: '01', category: 'Data Engineering', title: 'Spotify Data Lakehouse Pipeline', type: 'Azure Data Pipeline', desc: 'An end-to-end data engineering pipeline built on Azure and Databricks, implementing the Medallion Architecture with real-time incremental loading, data governance, CI/CD, and automated alerting.', tags: ['Microsoft Azure', 'Azure SQL Database', 'PySpark', 'Star Schema', 'Databricks', 'Python', 'SCD Type 2', 'DLT'], github: 'https://github.com/gouri9230/Azure_Spotify_Project', color: 'from-lime-300/20 via-emerald-400/10 to-transparent', image: proj1 },
+  { number: '02', category: 'Data Engineering', title: 'Uber-Style Transportation Data Lakehouse', type: 'Azure Data Pipeline', desc: 'An end-to-end Uber-Style data platform that combines incremental data ingestion, real-time trip processing with Spark Streaming, and dbt transformations to build a medallion-style analytics pipeline in Databricks.', tags: ['PySpark', 'dbt', 'Python', 'SQL', 'Spark Structured Streaming', 'Star Schema', 'dbt Snapshots'], github: 'https://github.com/gouri9230/TravelData_dbt_pyspark', color: 'from-violet-400/20 via-fuchsia-400/10 to-transparent', image: proj2 },
+  { number: '03', category: 'Data Engineering', title: 'SAP Data Pipeline', type: 'ETL/ELT Pipelines', desc: 'An end-to-end data pipeline using Azure Data Factory to replicate 6 SAP tables (MARA, VBAP, VBRK, COSTLIST, INVOICE_LINE_ITEM, PRODUCING_STAT_RATIO_DETAIL) from On-Premise SQL Server into a Medallion Architecture (Bronze/Silver/Gold) on Azure', tags: ['ADF', 'Azure SQL Database', 'ADLS Gen2', 'SQL Server', 'Medallion Architecture'], github: 'https://github.com/gouri9230/SAP-Data-Pipeline', color: 'from-sky-300/20 via-cyan-400/10 to-transparent', image: proj3 },
 ]
+const projectCategories = ['Data Analytics', 'Data Engineering']
 const experienceGroups = [
   {
     name: 'Data Analytics',
@@ -165,7 +166,7 @@ function SectionHeading({ label, title, copy }) {
 }
 function Navbar() {
   const [open, setOpen] = useState(false)
-  const links = [['About', '#about'], ['Skills', '#skills'], ['Projects', '#projects'], ['Experience', '#journey']]
+  const links = [['About', '#about'], ['Projects', '#projects'], ['Skills', '#skills'], ['Experience', '#journey']]
   return <header className="fixed inset-x-0 top-0 z-50 border-b border-white/[.06] bg-[#090b10]/80 backdrop-blur-xl">
     <nav className="container flex h-[76px] items-center justify-between">
       <a href="#home" className="font-display text-xl font-bold tracking-tight">S.N<span className="text-lime-300">.</span></a>
@@ -328,29 +329,81 @@ function Projects() {
       <div className="flex flex-wrap items-end justify-between gap-5">
         <SectionHeading label="Selected projects" title="A few things I’ve made." copy="Projects showcasing my approach to building pipelines, transforming data, and generating actionable insights."/>
       </div>
-      <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-        {projects.map(p=><article key={p.number} className="glass group overflow-hidden rounded-3xl transition duration-300 hover:-translate-y-2 hover:border-white/20">
-        <div className={`relative flex aspect-[1.35] items-center justify-center overflow-hidden bg-gradient-to-br ${p.color}`}>
-          <div className="absolute inset-0 opacity-30" style={{backgroundImage:'radial-gradient(circle at 50% 50%, rgba(255,255,255,.16), transparent 55%)'}}/>
-          <img
-            src={p.image}
-            alt={`${p.title} project preview`}
-            className="h-full w-full object-contain transition duration-500 group-hover:scale-[1.02]"
-          />
-          <span className="absolute left-6 top-6 text-xs tracking-widest text-white/50">
-            {p.number} / 03
-          </span>
-          <span className="absolute bottom-5 right-6 rounded-full border border-white/15 bg-black/20 px-3 py-1 text-[10px] uppercase tracking-widest text-white/70">{p.type}</span>
-        </div>
-        <div className="p-7">
-          <div className="flex items-start justify-between gap-4">
-            <h3 className="font-display text-2xl font-semibold tracking-tight">{p.title}</h3>
-            <span className="text-zinc-500 transition group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-lime-300"><ArrowUpRight/></span>
-          </div>
-          <p className="muted mt-3 min-h-[76px] text-sm leading-6">{p.desc}</p>
-          {p.github && (<a href={p.github} target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-lime-300 transition hover:text-lime-200"><Github size={16}/>View on GitHub<ArrowUpRight size={14} /></a>)}
-          <div className="mt-6 flex flex-wrap gap-2">{p.tags.map(t=><span key={t} className="rounded-full border border-white/10 px-3 py-1.5 text-[10px] text-zinc-400">{t}</span>)}</div>
-        </div></article>)}
+      <div className="mt-10 space-y-12">
+        {projectCategories.map((category) => {
+          const categoryProjects = projects.filter((project) => project.category === category)
+
+          return (
+            <section key={category} aria-labelledby={`projects-${category.toLowerCase().replace(' ', '-')}`}>
+              <h3 id={`projects-${category.toLowerCase().replace(' ', '-')}`} className="mb-5 font-display text-3xl font-semibold tracking-tight text-lime-400">
+                {category}
+              </h3>
+              {categoryProjects.length > 0 ? (
+                <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+                  {categoryProjects.map((p) => (
+                    <article
+                      key={p.number}
+                      className="glass group overflow-hidden rounded-3xl transition duration-300 hover:-translate-y-2 hover:border-white/20"
+                    >
+                      <div className={`relative flex aspect-[1.35] items-center justify-center overflow-hidden bg-gradient-to-br ${p.color}`}>
+                        <div
+                          className="absolute inset-0 opacity-30"
+                          style={{ backgroundImage: 'radial-gradient(circle at 50% 50%, rgba(255,255,255,.16), transparent 55%)' }}
+                        />
+                        <img
+                          src={p.image}
+                          alt={`${p.title} project preview`}
+                          className="h-full w-full object-contain transition duration-500 group-hover:scale-[1.02]"
+                        />
+                        <span className="absolute left-6 top-6 text-xs tracking-widest text-white/50">
+                          {p.number} / 03
+                        </span>
+                        <span className="absolute bottom-5 right-6 rounded-full border border-white/15 bg-black/20 px-3 py-1 text-[10px] uppercase tracking-widest text-white/70">
+                          {p.type}
+                        </span>
+                      </div>
+                      <div className="p-7">
+                        <div className="flex items-start justify-between gap-4">
+                          <h3 className="font-display text-2xl font-semibold tracking-tight">{p.title}</h3>
+                          <span className="text-zinc-500 transition group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-lime-300">
+                            <ArrowUpRight />
+                          </span>
+                        </div>
+                        <p className="muted mt-3 min-h-[76px] text-sm leading-6">{p.desc}</p>
+                        {p.github && (
+                          <a
+                            href={p.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-lime-300 transition hover:text-lime-200"
+                          >
+                            <Github size={16} />
+                            View on GitHub
+                            <ArrowUpRight size={14} />
+                          </a>
+                        )}
+                        <div className="mt-6 flex flex-wrap gap-2">
+                          {p.tags.map((t) => (
+                            <span
+                              key={t}
+                              className="rounded-full border border-white/10 px-3 py-1.5 text-[10px] text-zinc-400"
+                            >
+                              {t}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </article>
+                  ))}
+                </div>
+              ) : (
+                <p className="muted rounded-2xl border border-white/10 px-6 py-5 text-sm">
+                  Data analytics projects coming soon.
+                </p>
+              )}
+            </section>
+          )
+        })}
       </div>
     </div>
   </section>
@@ -538,5 +591,5 @@ function Footer() {
   return <footer className="border-t border-white/[.06] py-8"><div className="container flex flex-col items-center justify-between gap-4 text-xs text-zinc-500 sm:flex-row"><p>© {new Date().getFullYear()} {profile.name}</p><a href="#home" className="transition hover:text-lime-300">Back to top ↑</a></div></footer>
 }
 export default function App() {
-  return <><Navbar/><main><Hero/><About/><Skills/><Projects/><Journey/><AboutMe /><Contact/></main><Footer/></>
+  return <><Navbar/><main><Hero/><About/><Projects/><Skills/><Journey/><AboutMe /><Contact/></main><Footer/></>
 }

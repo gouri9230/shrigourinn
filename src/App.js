@@ -20,9 +20,9 @@ function App() {
         <Analytics />
         <Home />
         <About />
+        <Projects />
         <Skills />
         <Experience />
-        <Projects />
         <Contact />
         <Footer />
         <TopButton />
